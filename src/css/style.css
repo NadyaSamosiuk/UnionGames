@@ -1,0 +1,304 @@
+*{
+    padding: 0;
+    margin: 0;
+   /* border: 1px solid #991133*/
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1280px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header{
+    background-image: url('../assets/img/nav.jpg');
+    background-position: top right -50px
+}
+.header__item{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center; 
+    
+}
+.header__logo{
+    width: 250px;   
+}
+.header__logo a{
+    font-size: 32px;
+    position: relative;
+    padding-right: 20px;
+}
+.header__logo img{
+    width: 60px;
+}
+.header__logo span{
+    position: absolute;
+    bottom: 14px;
+    margin-left: 10px;
+    font-family: 'Carter One', cursive;
+    color: rgb(13, 199, 202);
+    text-shadow: 3px 2px 1px rgba(13, 194, 207, 0.452);
+}
+.nav__link{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    width: 400px;
+}
+.nav__link a{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    border-bottom: 5px solid transparent;
+    height: 75px;
+    padding-left: 5px;
+    padding-right: 5px;   
+}
+
+.nav__link a[class^='active']{
+    border-bottom: 5px solid rgb(0, 210, 215);
+    color: rgb(0, 210, 215);
+    font-weight: bold;
+}
+
+.header__widget{
+    display: flex;
+    align-items: center;
+}
+#header__widget__value{
+    max-width: 180px;
+    width: 100%;
+    font-size:18px;
+    border-radius: 14px;
+    border: 1px solid #020202;
+    outline: none;
+    color:#151518;
+    padding: 6px 45px 6px 20px;
+    margin-right: 60px;
+    background-image: url('../assets/img/search.svg');
+    background-color:rgba(152, 161, 168, 0.616); ;
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-size: 30px;
+}
+#header__widget__value::placeholder{
+    color:#c8c5d6;
+    padding-left: 3px;
+}
+.header__widget__cart{
+    width: 60px;
+}
+.header__cart{
+    position: relative;
+}
+.header__cart__count{
+    position: absolute;
+    top: 22px;
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+    font-size: 14px;
+    color: #292525;
+    font-weight: bold;
+   
+}
+.shop,
+.cart{ 
+    box-shadow: inset 0px 0px 31px 42px rgb(251 251 251);
+    background-image: url("../assets/img/11.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.catalog__items {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.catalog__item{
+    width: calc(33.3%);
+    width: 250px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.507);
+    border-radius: 10px;
+}
+.catalog__item__img{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.catalog__item__img img{
+    width: 250px;
+    border-radius: 10px 10px 0 0;
+}
+.catalog__caption{
+    background-color: #eeeff0;
+    width: 220px;
+    height: 110px;
+    padding: 10px 10px 10px 20px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+.catalog__caption__name{
+    font-size: 22px;
+    font-weight: bold;
+    color:#1e173a;
+    cursor: pointer;
+}
+.catalog__caption__name:hover{
+    color: rgb(8, 204, 218);
+}
+
+.catalog__caption__price{
+    color:rgb(74, 81, 104);
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+}
+
+.catalog__caption__btn{
+    position: absolute;
+    right:25px;
+    bottom: 20px;
+    color:#eeedf3;
+    font-weight: 600;
+    background-color: rgb(13, 199, 202);
+    outline: none;
+    border: 1px solid #0d0f0f38;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;  
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25); 
+}
+.catalog__caption__btn:hover{
+    background-color: rgb(248, 248, 248);
+    color:rgb(13, 199, 202);
+    box-shadow: 0px 1px  11px rgba(17, 175, 175, 0.904);
+    cursor: pointer;
+    border: 1px solid #0c8f8fd5;
+}
+.cart__title{
+    font-weight: bold;
+    font-size: 26px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.line__top{
+    margin-bottom: 20px;
+    height: 10px;
+	border: none;
+	background: linear-gradient(150deg, rgb(3, 84, 99), rgba(0, 255, 221, 0.438));
+}
+.line__bottom{
+    margin-top: 20px;
+    height: 10px;
+	border: none;
+	background: linear-gradient(150deg, rgb(3, 84, 99), rgba(0, 255, 221, 0.438));
+}
+.cart__product{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart__product__title{
+    width: 220px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.cart__item__price{
+    font-weight: bold;
+}
+.cart__item__img img{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+.cart_total__price{
+    padding-top: 20px;
+}
+.cart__caption__btn{
+    width: 40px;
+    height: 40px;
+}
+.cart__caption__btn img{
+    width: 40px;
+    cursor: pointer;
+}
+.wrapper{
+    height: 100px;
+}
+.cart__link{
+    color: rgb(33, 175, 175);
+    text-decoration: underline;
+}
+.cart__link:hover{
+    color: rgb(154, 43, 206);
+}
+
+.footer_poster{
+    width: 100%;
+    height: 264px;
+    background-image: url('../assets/img/poster.svg');   
+}
+.footer{
+    background-image: url('../assets/img/nav.jpg');
+}
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    border-top: 2px solid rgb(26, 27, 27);
+}
+.footer__logo{
+    width: 180px;
+}
+.footer__logo__icon{
+    width: 35px;
+    position: relative;
+}
+.footer__logo span{
+    position: absolute;
+    margin-left: 10px;
+    font-family: 'Carter One', cursive;
+    color: rgb(13, 199, 202);
+    text-shadow: 1px 1px 1px rgba(181, 220, 223, 0.452);
+    font-size: 20px;
+}
+.footer__nav__link{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.footer__nav__link a{
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 5px;
+   
+}
+.footer__nav__link a:hover{
+    color: rgb(0, 210, 215);
+}
+
+.footer__social__facebook,
+.footer__social__youtube,
+.footer__social__instagram{
+    width: 30px;
+    margin-left: 25px;
+}
