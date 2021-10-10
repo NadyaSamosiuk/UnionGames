@@ -4,13 +4,10 @@ import { useHistory } from 'react-router-dom';
 function Product ({product, addToCart}){
     const history = useHistory()
     
-
-
     function heandlerProductView(){
         history.push(`product_${product.id}`,{
-            product              
+            product           
         })
-        console.log(product)
     }
 
     return(
