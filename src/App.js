@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './components/Header';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import '../src/css/style.css'
+
 import HomePage from './components/HomePage';
 import Footer from './components/Footer';
 import Shop from './components/Shop';

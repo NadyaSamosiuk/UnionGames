@@ -40,6 +40,9 @@ function Shop (){
         <div className="shop">
             <div className="container">
                 <div className="catalog">
+                    <div className="catalog__widget">
+                        <input type='text' id="catalog__widget__value" placeholder="Поиск"/>
+                    </div>
                     <ul className="catalog__items">
                         {data.map((product,index) =>{
                             return(

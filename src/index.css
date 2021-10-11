@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*:not([class^='antd']) {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  line-height: normal;
+}
+
+input:not([class^='antd']), 
+select:not([class^='antd']), 
+optgroup:not([class^='antd']), 
+textarea:not([class^='antd']) {
+  line-height: normal;
+}
+
+p:not([class^='antd']) {
+  margin-top: 1em; 
+  margin-bottom: 1em; 
+  margin-left: 0; 
+  margin-right: 0;
+}
+button:not([class^='antd']) {
+  appearance: button;
+  text-rendering: auto;
+  text-shadow: none;
+  display: inline-block;
+  align-items: flex-start;
+  cursor: pointer;
+  box-sizing: border-box;
+}

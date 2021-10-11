@@ -17,16 +17,15 @@ function ProductCard(){
         if(cart.length === 0){
             product.count = 1
             cart.push(product)
-         }else if (checkAddToCart(product) !== -1){
-             cart[checkAddToCart(product)].count +=1
-         }else{
-             product.count = 1
-             cart.push(product)
-         }
-         setCart([...cart])
-         localStorage.setItem('cart', JSON.stringify(cart))
-         console.log(cart)
-     }
+        }else if (checkAddToCart(product) !== -1){
+            cart[checkAddToCart(product)].count +=1
+        }else{
+            product.count = 1
+            cart.push(product)
+        }
+        setCart([...cart])
+        localStorage.setItem('cart', JSON.stringify(cart))
+    }
     
     return(
         <>
@@ -46,7 +45,6 @@ function ProductCard(){
                     </div>
                 </div>
             </div>
-           
         </>
     )
 }

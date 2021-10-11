@@ -26,12 +26,13 @@ const Header = () => {
                         <NavLink to='/homepage'><img src='./image/logo.png' alt="logo"/><span>UnionGames</span></NavLink>           
                     </div>
                     <Nav/>
-                    <div className="header__widget">
-                        <input type='text' id="header__widget__value" placeholder="Поиск"/>
-                        <NavLink to='/cart' className="header__cart">
-                            <img className="header__widget__cart" src="./image/cart1.png" alt="cart"/><span className="header__cart__count">{getCount()}</span>
-                        </NavLink>
-                    </div>
+                    <div className="header__social__tel">
+                            <h3>Контактный телефон:</h3>
+                            <a  href="tel:+37529775-75-75">+375(29) 775-75-75</a>
+                        </div>
+                    <NavLink to='/cart' className="header__cart">
+                        <img className="header__widget__cart" src="./image/cart1.png" alt="cart"/><span className="header__cart__count">{getCount()}</span>
+                    </NavLink>
                 </div>
             </div>
         </header>
