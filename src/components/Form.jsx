@@ -21,11 +21,10 @@ class FormComponent extends Component {
     } 
     
     onChangeHandler(e) { 
-        localStorage.setItem('order', JSON.stringify(this.state.delivery)) 
+        localStorage.setItem('order', JSON.stringify(this.state)) 
         this.setState({  
             [e.target.name]: e.target.value 
-        });
-          
+        });   
     } 
     
     render() {  

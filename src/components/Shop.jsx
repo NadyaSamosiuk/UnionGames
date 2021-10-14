@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import Product from "./Product";
 import Data from "../data/data.json"
 import Context from "./Context";
+import Search from "./Search";
+
 
 
 function Shop (){
 
-    const {cart, setCart} = useContext(Context)
+    const {cart, setCart, searchValue} = useContext(Context)
     const [data, setProducts] = useState(JSON.parse(localStorage.getItem('data')) || [])
+
 
     useEffect(()=>{
         if(!localStorage.getItem('data')){
@@ -40,11 +43,16 @@ function Shop (){
         <div className="shop">
             <div className="container">
                 <div className="catalog">
-                    <div className="catalog__widget">
-                        <input type='text' id="catalog__widget__value" placeholder="Поиск"/>
-                    </div>
+                    <Search/>
                     <ul className="catalog__items">
-                        {data.map((product,index) =>{
+                        {data.filter((item)=>{
+                            if(searchValue.length === 0){
+                                return item
+                            }else if(item.title.toLowerCase().includes(searchValue.toLowerCase())){
+                                return item
+                            }   
+                        }).map((product,index) =>{
+
                             return(
                               <Product
                               product={product}

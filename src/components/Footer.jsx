@@ -13,7 +13,7 @@ const Footer = () => {
                     </div>
                     <div className="footer__nav">
                         <div className="footer__nav__link">
-                            <NavLink to='/homepage'>Главная </NavLink>
+                            <NavLink to='/'>Главная </NavLink>
                             <NavLink to='/news'>Новости </NavLink>
                             <NavLink to='/catalog'>Каталог </NavLink>
                             <NavLink to='/about'>О нас</NavLink>
