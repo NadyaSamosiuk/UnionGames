@@ -37,7 +37,7 @@ class FormComponent extends Component {
             <label>E-mail:</label>  
             <input className="form__data__mail" type="text" name="email" placeholder="ivan.ivanov@mail.com" onChange={this.onChangeHandler}/>
             <label>Телефон:</label>  
-            <input className="form__data__phone" pattern="[+]375[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required type="tel" name="phone" placeholder="+375(29)222-22-22" onChange={this.onChangeHandler}/> 
+            <input className="form__data__phone" pattern="[+]375\([0-9]{2}\)[0-9]{3}-[0-9]{2}-[0-9]{2}" required type="tel" name="phone" placeholder="+375(29)222-22-22" onChange={this.onChangeHandler}/> 
             <h3 className="form__title">Доставка</h3>
             <hr/>
             <label>Способ доставки:</label>  
@@ -58,7 +58,6 @@ class FormComponent extends Component {
                 <option value="Mogilev">Могилев</option>
                 <option value="Brest">Брест</option> 
             </select> 
-
             <input className="form__data__street" type="text" name="street" placeholder="Улица, дом" onChange={this.onChangeHandler}/>
             <div className="form__data__apartment">
                 <input  className="form__data__entrance" type="text" name="entrance" placeholder="Подъезд" onChange={this.onChangeHandler}/>

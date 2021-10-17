@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
     return (
       <nav className="nav">
-        <button className="nav_toggle"><label for="nav_toggle"></label></button>
+        <button className="nav_toggle"><label htmlFor="nav_toggle"></label></button>
         <input type="checkbox"  id="nav_toggle"/>
             <ul>
               <li className="nav_item"><NavLink className="nav__link" to='/home'>Главная</NavLink></li>
