@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './components/Header';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import '../src/css/style.css'
+import '../src/css/media.css'
 import HomePage from './components/HomePage';
 import Footer from './components/Footer';
 import Shop from './components/Shop';
@@ -21,7 +22,7 @@ function App() {
       <div className="App">
         <Header/>
         <Switch>
-          <Route path='/homepage'>
+          <Route path='/home'>
             <HomePage/>
           </Route>
           <Route path='/news'>

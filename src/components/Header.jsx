@@ -23,7 +23,7 @@ const Header = () => {
             <div className="container">
                 <div className="header__item">
                     <div className="header__logo">
-                        <NavLink to='/homepage'><img src='./image/logo.png' alt="logo"/><span>UnionGames</span></NavLink>           
+                        <NavLink to='/home'><img src='./image/logo.png' alt="logo"/><span>UnionGames</span></NavLink>           
                     </div>
                     <Nav/>
                     <div className="header__social__tel">

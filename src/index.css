@@ -26,7 +26,12 @@ textarea:not([class^='antd']) {
 }
 
 p:not([class^='antd']) {
-  margin-bottom: 1em; 
+  margin-bottom: 0.8em; 
+  margin-left: 0; 
+  margin-right: 0;
+}
+ul:not([class^='antd']) {
+  margin-bottom: 0; 
   margin-left: 0; 
   margin-right: 0;
 }
@@ -34,7 +39,6 @@ button:not([class^='antd']) {
   appearance: button;
   text-rendering: auto;
   text-shadow: none;
-  display: inline-block;
   align-items: flex-start;
   cursor: pointer;
   box-sizing: border-box;

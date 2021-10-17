@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router";
 import Context from "./Context";
+import { message, Button} from 'antd';
 
 function ProductCard(){
     const loc = useLocation()
@@ -14,14 +15,22 @@ function ProductCard(){
     }
 
     function addToCart (product){
+
+        const success = () => {
+            message.success('Товар добавлен в корзину');
+        };
+
         if(cart.length === 0){
             product.count = 1
             cart.push(product)
+            success()
         }else if (checkAddToCart(product) !== -1){
             cart[checkAddToCart(product)].count +=1
+            success()
         }else{
             product.count = 1
             cart.push(product)
+            success()
         }
         setCart([...cart])
         localStorage.setItem('cart', JSON.stringify(cart))
@@ -35,7 +44,9 @@ function ProductCard(){
                     <h2 className="product__card__title">{title}</h2>
                     <div className="product__card__subtitle">PS4</div>
                     <p className="product__card__price">{price} p.</p>
-                    <button className="product__card__add" onClick={()=>{addToCart(product)}} id={id}>Добавить в корзину</button>
+                    <div className="product__card__add">
+                        <Button className="product__card__add__btn" onClick={()=>{addToCart(product)}} id={id}>Добавить в корзину</Button>
+                    </div>
                 </div>
                 <div className="container">
                     <div className="prtoduct__description">

@@ -2,10 +2,14 @@ import React, { useContext, useState } from "react";
 import { NavLink,  useHistory } from "react-router-dom";
 import Context from "./Context";
 import FormComponent from "./Form";
+import { Modal, Button, message} from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 function Cart () {
     const {cart, setCart} = useContext(Context)
     const [flag, setFlag] = useState(false)
+    const { confirm } = Modal;
+
 
 
     function getTotalPrice(){
@@ -17,9 +21,23 @@ function Cart () {
     }
 
    function todoDelete(item){
-       const newcart = cart.filter((cart_product)=> cart_product.id !==  item.id  )
-       localStorage.setItem('cart', JSON.stringify(newcart))
-       setCart(newcart)
+    
+       confirm({
+        title: 'Вы действительно хотите удалить товар?',
+        icon: <ExclamationCircleOutlined />,
+        content: '',
+        okText: 'Да',
+        okType: 'danger',
+        cancelText: 'Нет',
+        onOk() {
+            const newcart = cart.filter((cart_product)=> cart_product.id !==  item.id  )
+            localStorage.setItem('cart', JSON.stringify(newcart))
+            setCart(newcart)
+        },
+        onCancel() {
+          console.log('Cancel');
+        },
+      });
     }
 
    function placeAnOrder(){
@@ -27,10 +45,14 @@ function Cart () {
     }
 
     function confirmTheOrder(){
+        const success = () => {
+            message.success('Ваш заказ оформлен');
+        };
+       success()
+
         const newcart=[]
         localStorage.setItem('cart', JSON.stringify(newcart))
         setCart(newcart)
-       
     }
 
     const history = useHistory()
@@ -72,7 +94,9 @@ function Cart () {
                                     </div>
                                     <p className="cart__item__count">{item.count}</p>
                                     <p className="cart__item__price" >{item.price * item.count}р.</p>
-                                    <div className="cart__caption__btn" onClick={()=>{todoDelete(item)}} id={item.id}><img src="./image/delete.png" alt="delite"/></div> 
+                                    <div className="cart__caption__btn">
+                                        <Button className="cart__caption__btn_1" onClick={()=>{todoDelete(item)}} id={item.id}> </Button> 
+                                    </div>
                                 </div>
                             )
                     })}
@@ -83,7 +107,9 @@ function Cart () {
                     </div>
                     {flag && <div className="cart__products__form">
                         <FormComponent/>
-                        <button className="form__btn" onClick={()=>{confirmTheOrder()}}>Подтвердить заказ</button>
+                        <div className="form__btn">
+                            <Button  onClick={()=>{confirmTheOrder()}}>Подтвердить заказ</Button>
+                        </div>
                     </div>}
                 </div>
             </div>

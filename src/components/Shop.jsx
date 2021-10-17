@@ -3,8 +3,7 @@ import Product from "./Product";
 import Data from "../data/data.json"
 import Context from "./Context";
 import Search from "./Search";
-
-
+import { message} from 'antd';
 
 function Shop (){
 
@@ -25,18 +24,25 @@ function Shop (){
     }
 
     function addToCart (product){
+
+        const success = () => {
+            message.success('Товар добавлен в корзину');
+        };
+
        if(cart.length === 0){
            product.count = 1
            cart.push(product)
+           success()
         }else if (checkAddToCart(product) !== -1){
             cart[checkAddToCart(product)].count +=1
+            success()
         }else{
             product.count = 1
             cart.push(product)
+            success()
         }
         setCart([...cart])
         localStorage.setItem('cart', JSON.stringify(cart))
-        console.log(cart)
     }
 
     return (
@@ -52,7 +58,6 @@ function Shop (){
                                 return item
                             }   
                         }).map((product,index) =>{
-
                             return(
                               <Product
                               product={product}
